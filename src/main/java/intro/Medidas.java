@@ -15,7 +15,7 @@ public class Medidas {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Escolha uma opção.");
-        System.out.println("C - Calcular em modo compacto.\nE - Calcular em modo extenso.");
+        System.out.println("C - Calcular em modo compacto.\nE - Calcular em modo extenso.\nR - Contagem regressiva.\nD - Contar até 10.");
         String opcao = scanner.next();
         //String opcao = "blabla";
         switch (opcao){
@@ -27,9 +27,16 @@ public class Medidas {
             case "e":
                 calcularAreaModoExtenso();
                 break;
+            case "r":
+            case "R":
+                contagemRegressiva();
+                break;
+            case "d":
+            case "D":
+                contarAteDez();
+                break;
             default:
-                System.out.println("Nenhum método válido escolhido. Calculando área em modo compacto.");
-                calcularAreaModoCompacto();
+                System.out.println("Nenhum método válido escolhido.");
                 break;
         }
 
@@ -54,6 +61,18 @@ public class Medidas {
         int largura = 5;
         int comprimento = 6;
         System.out.println("A área do retângulo é: " + largura*comprimento + " m2.");
+    }
+    public static void contarAteDez(){
+        System.out.println("Contando até 10.");
+        for (int numero = 1; numero <= 10; numero++){
+            System.out.println(numero);
+        }
+    }
+    public static void contagemRegressiva(){
+        System.out.println("Fazendo contagem regressiva.");
+        for (int numero = 10; numero >=0; numero--){
+            System.out.println(numero);
+        }
     }
 
 }
