@@ -14,8 +14,7 @@ public class Medidas {
     public static void main(String[] args){
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Escolha uma opção.");
-        System.out.println("C - Calcular em modo compacto.\nE - Calcular em modo extenso.\nR - Contagem regressiva.\nD - Contar até 10.");
+        System.out.println("Escolha uma opção.\n\nC - Calcular em modo compacto.\nE - Calcular em modo extenso.\nR - Contagem regressiva.\nD - Contar até 10.");
         String opcao = scanner.next();
         //String opcao = "blabla";
         switch (opcao){
@@ -64,13 +63,13 @@ public class Medidas {
     }
     public static void contarAteDez(){
         System.out.println("Contando até 10.");
-        for (int numero = 1; numero <= 10; numero++){
+        for (int numero = 1; numero < 11; numero++){
             System.out.println(numero);
         }
     }
     public static void contagemRegressiva(){
         System.out.println("Fazendo contagem regressiva.");
-        for (int numero = 10; numero >=0; numero--){
+        for (int numero = 10; numero > -1; numero--){
             System.out.println(numero);
         }
     }
