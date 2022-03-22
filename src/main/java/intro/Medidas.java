@@ -15,7 +15,7 @@ public class Medidas {
         String opcao = " ";
         while (!opcao.equals("s") & !opcao.equals("S")) {
             System.out.println("\nEscolha uma opção:\n");
-            System.out.println("1 - Calcular em modo compacto.\n2 - Calcular em modo extenso.\n3 - Contagem regressiva.\n4 - Contar até 10.\n5 - Tabuada.\nS - Sair.");
+            System.out.println("1 - Calcular em modo compacto.\n2 - Calcular em modo extenso.\n3 - Contagem regressiva.\n4 - Contar até 10.\n5 - Tabuada.\n6 - Divisão.\nS - Sair.");
             opcao = scanner.next();
             //String opcao = "blabla";
             switch (opcao) {
@@ -33,6 +33,9 @@ public class Medidas {
                     break;
                 case "5":
                     tabuada();
+                    break;
+                case "6":
+                    divisaoInt();
                     break;
                 case "s":
                 case "S":
@@ -91,6 +94,19 @@ public class Medidas {
             else {
                 System.out.print(numero * i + ", ");
             }
+        }
+    }
+    public static void divisaoInt(){
+
+        try{
+            System.out.println("Digite um número para ser dividido: ");
+            int num = scanner.nextInt();
+            System.out.println("Digite um número para ser seu divisor: ");
+            int div = scanner.nextInt();
+            System.out.println("A divisão de " + num + " por " + div + " = " + num/div + ".");
+        }
+        catch(Exception e){
+            System.out.println("Erro: " + e.getMessage());
         }
     }
 }
