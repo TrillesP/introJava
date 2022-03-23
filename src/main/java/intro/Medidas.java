@@ -15,7 +15,7 @@ public class Medidas {
         String opcao = " ";
         while (!opcao.equals("s") & !opcao.equals("S")) {
             System.out.println("\nEscolha uma opção:\n");
-            System.out.println("1 - Calcular em modo compacto.\n2 - Calcular em modo extenso.\n3 - Contagem regressiva.\n4 - Contar até 10.\n5 - Tabuada.\n6 - Divisão.\nS - Sair.");
+            System.out.println("1 - Calcular em modo compacto.\n2 - Calcular em modo extenso.\n3 - Contagem regressiva.\n4 - Contar até 10.\n5 - Tabuada.\n6 - Divisão.\n7 - Somar Dois Números.\nS - Sair.");
             opcao = scanner.next();
             //String opcao = "blabla";
             switch (opcao) {
@@ -36,6 +36,9 @@ public class Medidas {
                     break;
                 case "6":
                     divisaoInt();
+                    break;
+                case "7":
+                    somarDoisNumeros();
                     break;
                 case "s":
                 case "S":
@@ -95,6 +98,17 @@ public class Medidas {
                 System.out.print(numero * i + ", ");
             }
         }
+    }
+    public static void somarDoisNumeros(){
+        System.out.println("Escolha o primeiro número: ");
+        int num1 = scanner.nextInt();
+        System.out.println("Escolha o segundo número: ");
+        int num2 = scanner.nextInt();
+        int result = num1+num2;
+        System.out.println(num1+" + "+num2+" = "+result+".");
+    }
+    public static int somarDoisNumerosCompacto(int num1,int num2){
+        return num1 + num2;
     }
     public static void divisaoInt(){
 
