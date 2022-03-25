@@ -10,8 +10,10 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.testng:testng:7.1.0'
     testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
     implementation group: 'com.opencsv', name: 'opencsv', version: '4.2'
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.3.3'
 }
 
 test{
