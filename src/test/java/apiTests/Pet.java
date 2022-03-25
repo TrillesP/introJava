@@ -95,6 +95,9 @@ public class Pet {
         .then()
                 .log().all()
                 .statusCode(200)
+                .body("code", is(200))
+                .body("type", is("unknown"))
+                .body("message", is(Integer.toString(petId)))
         ;
     }
 
