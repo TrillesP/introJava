@@ -1,10 +1,12 @@
 package apiTests;
 
+import io.restassured.specification.Argument;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.contains;
@@ -37,7 +39,7 @@ public class Pet {
                 .log().all()                                          //Registra tudo do envio
                 .body(jsonBody)
         .when()                                                       //When - "when blabla..."
-                .post("https://petstore.swagger.io/v2/pet")      //Comando + endpoint
+                .post("https://petstore.swagger.io/v2/pet")      //Coloca + endpoint
         .then()                                                       //Then - "then, this..."
                 .log().all()                                          //Registra tudo do retorno
                 .statusCode(200)                                      //Valida o código de estado nativo
@@ -45,6 +47,22 @@ public class Pet {
                 .body("name", is("Snoopy"))
                 .body("category.name", is("dog"))
                 .body("category.id", is(1))
+        ;
+    }
+    @Test
+    public void consultarPet(){
+        String petId = "1048";
+
+        given()
+                .contentType("application/json")
+                .log().all()
+        .when()
+                .get("https://petstore.swagger.io/v2/pet/" + petId)  //Get - Consulta
+        .then()
+                .log().all()
+                .statusCode(200)
+                .body("name", is("Snoopy"))
+                .body("status", is("available"))
         ;
     }
 
